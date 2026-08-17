@@ -345,7 +345,6 @@ function AppCRM() {
 
       <header className="header">
         <div className="header-content">
-          <img src="/logo.png" alt="Solocal" className="logo" />
           <h1>Solocal CRM</h1>
           <p>Plateforme intelligente de gestion des contacts</p>
         </div>
