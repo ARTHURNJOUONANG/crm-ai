@@ -25,20 +25,9 @@ app = FastAPI(
 )
 
 # ⭐ CONFIGURATION CORS - DOIT ÊTRE AVANT LES ROUTES
-# Pour la production: remplace les URLs localhost par tes URLs Vercel/Render
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        # Développement local
-        "http://localhost:3000",
-        "http://localhost:5173",
-        "http://127.0.0.1:3000",
-        "http://127.0.0.1:5173",
-        "http://localhost:8080",
-        # Production (à configurer après déploiement)
-        "https://crm-ai.vercel.app",  # Frontend Vercel
-        "https://*.vercel.app",  # Tous les projets Vercel
-    ],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -84,7 +73,7 @@ if __name__ == "__main__":
     print("📍 Serveur: http://localhost:8000")
     print("📚 Docs: http://localhost:8000/docs")
     print("🔑 API Claude: " + ("✅ ACTIVÉE" if api_key else "⚠️ NON CONFIGURÉE"))
-    print("🌐 CORS: ✅ Activé pour localhost et production")
+    print("🌐 CORS: ✅ Activé pour toutes origines (demo)")
     print("="*60 + "\n")
     
     uvicorn.run(
@@ -92,4 +81,4 @@ if __name__ == "__main__":
         host="127.0.0.1",
         port=8000,
         reload=True
-    )
+    )    )
