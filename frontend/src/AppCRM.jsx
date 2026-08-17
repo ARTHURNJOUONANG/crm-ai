@@ -7,8 +7,7 @@ import jsPDF from "jspdf"
 import Papa from "papaparse"
 import "./App.css"
 
-const API_BASE = "http://localhost:8000"
-
+const API_BASE = "https://crm-ai-1.onrender.com"
 function AppCRM() {
   const [contacts, setContacts] = useState([])
   const [filteredContacts, setFilteredContacts] = useState([])
