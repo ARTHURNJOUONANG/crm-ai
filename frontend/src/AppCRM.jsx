@@ -399,14 +399,16 @@ function AppCRM() {
               <div className="chart-container">
                 <h3>Distribution par priorité</h3>
                 <ResponsiveContainer width="100%" height={250}>
-                  <PieChart>
-                    <Pie data={scoreDistribution} cx="50%" cy="50%" labelLine={false} label={({ name, value }) => `${name}: ${value}`} outerRadius={80} fill="#8884d8" dataKey="value">
-                      {scoreDistribution.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.color} />
-                      ))}
-                    </Pie>
-                  </PieChart>
-                </ResponsiveContainer>
+  <PieChart>
+    <Pie data={scoreDistribution} cx="50%" cy="50%" outerRadius={80} fill="#8884d8" dataKey="value">
+      {scoreDistribution.map((entry, index) => (
+        <Cell key={`cell-${index}`} fill={entry.color} />
+      ))}
+    </Pie>
+    <Tooltip />
+    <Legend />
+  </PieChart>
+</ResponsiveContainer>
               </div>
 
               <div className="chart-container">
